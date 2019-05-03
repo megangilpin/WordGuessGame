@@ -9,4 +9,4 @@ function randomWord (gameWords) {
 
 // Identifies if a guessed letter is in the word
 
-
+function isCorrectGuess (){}
