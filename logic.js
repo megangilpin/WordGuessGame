@@ -32,12 +32,27 @@ var getBlanks = function(word) {
 }
 
 // fills a blanks array in the correct locations given a letter and the word that array was built from
-var fillBlanks = function(word, arr, letter) {
+var fillBlanks = function(word, ansCurrent, letter) {
   for (var i=0; i<=word.length; i++) {
   if (word[i] === letter){
-   arr[i] = letter
+   ansCurrent[i] = letter
   }
   }
-  return arr;
+  return ansCurrent;
 }
+
+//Manages the state of the game - aka the score for the current round and the over all game score
+
+var setupRound = function(ansWord){
+  var roundScore = {
+    word:ansWord,
+    guessesLeft:9,
+    wrongGuesses: [],
+    puzzleState: getBlanks(ansWord),
+    }
+   return roundScore;
+  }
+
+  
+
 
