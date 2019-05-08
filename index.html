@@ -73,7 +73,7 @@
 
   <!-- New game button -->
   <div class="row">
-      <div class="col-md-12 text-center my-3">
+      <div class="col-md-12 text-center my-3" id="game-bttn">
           <button class="btn btn-primary btn-lg">New Game Who Dis</button>
       </div>
     </div>
@@ -92,19 +92,49 @@
   <script type="text/javascript">
  
 // variable for where puzzle blanks go
- var blanks = document.getElementById("puzzle-state");
+  var blanks = document.getElementById("puzzle-state");
+// variables for function from logic.js
+  var word = randomWord(gameWords);
+  var round = setupRound(word);
 
       // Next, we give JavaScript a function to execute when onkeyup event fires.
-      document.onkeyup = function(event) {
+// document.onkeyup = function(event) {
         // do I have to call randomWord a variable in order to call it in another funciton? and what is the best way of console.loginnt the return of randomWord...so it doesn't log once bfore the other function is called
         // var word = randomWord(gameWords);
         
         // blanks.innerHTML = word;
 
-        var word = randomWord(gameWords);
-        var round = setupRound(word);
-        blanks.innerHTML = round.puzzleState;
+// This worked but only one click
+        // var word = randomWord(gameWords);
+        // var round = setupRound(word);
+        // blanks.innerHTML = round.puzzleState;
+      // };
+
+// This did not work
+      // document.getElementById("game-bttn").addEventListener("click", function(){
+      //   randomWord(gameWords);
+      //   setupRound(word);
+      //   blanks.innerHTML = round.puzzleState;
+
+      document.onclick = function inputChange(event) {
+
+
       };
+
+      // Loads game upon widow open
+      window.onload = function (event) {
+
+          blanks.innerHTML = round.puzzleState;
+          };
+        
+
+
+    //   });
+
+      document.onkeyup = function(event) {
+      var letter = event.key.toLowerCase()
+      console.log(letter);
+    };
 
   </script>
     
