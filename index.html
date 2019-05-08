@@ -9,43 +9,103 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-              <h1 class="page-header text-center">Let's Get READY to WORD GAME</h1>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div id="puzzle-state"></div>
-          </div>
-        </div>
-      
+<!-- Page Content -->  
+<div class="container">
+  <!-- Header and game info -->
+    <header class="my-4">
+        <h2 class="text-center">LETS GET READY TO WORD GAME!</h2>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus iaculis urna id volutpat lacus laoreet non curabitur. Mauris rhoncus aenean vel elit scelerisque.</p>
+      </header>
 
-        <div class="row">
-          <div class="col-md-12">
-                <!-- this is where the game goes -->
-                <h1 class="text-center" id="guess-left">Guesses Left:</h1>
-                <h1 class="text-center" id="win-counter">Wins:</h1>
-                <h1 class="text-center" id="loss-counter">Lose:</h1>
-              </div>
-          </div>
-
-          <div class="row">
+<!-- Puzzle State -->
+        <div class="row jumbotron my-5">
             <div class="col-md-12 text-center">
-                <button class="btn btn-primary btn-lg">New Game Who Dis</button>
+              <div id="puzzle-state"></div>
             </div>
           </div>
+
+ <!-- game counters -->
+ <div class="row text-center my-5">
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Wrong Guesses</h4>
+          <div id="wrong-guesses"></div>
+        </div>
+      </div>
     </div>
 
-  <script scr = "logic.js">  </script>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Guesses Left</h4>
+          <div id="guesses-left">9</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Wins</h4>
+          <div id="win-counter">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Losses</h4>
+          <div id="loss-counter">0</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- New game button -->
+  <div class="row">
+      <div class="col-md-12 text-center my-3">
+          <button class="btn btn-primary btn-lg">New Game Who Dis</button>
+      </div>
+    </div>
+
+</div>
+<!-- /.container -->
+<!-- Footer -->
+<footer class="py-4 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Megan Gilpin 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <script type="text/javascript" src="logic.js"></script>
   <script type="text/javascript">
-  
-  
-  
-  
-  
+ 
+// variable for where puzzle blanks go
+ var blanks = document.getElementById("puzzle-state");
+
+      // Next, we give JavaScript a function to execute when onkeyup event fires.
+      document.onkeyup = function(event) {
+        // do I have to call randomWord a variable in order to call it in another funciton? and what is the best way of console.loginnt the return of randomWord...so it doesn't log once bfore the other function is called
+        // var word = randomWord(gameWords);
+        
+        // blanks.innerHTML = word;
+
+        var word = randomWord(gameWords);
+        var round = setupRound(word);
+        blanks.innerHTML = round.puzzleState;
+      };
+
   </script>
     
 </body>

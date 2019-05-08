@@ -1,16 +1,10 @@
 // word to guess for word game - theme = WORDS
 var gameWords = ["woord","parola", "ord", "slowo", "word", "mot", "gair"];
 
-// var myGame ={
-//     word:ansWord,
-//     guessesLeft:9,
-//     wrongGuesses: [],
-//     puzzleState: getBlanks(ansWord),
-// }
-
 // Returns random word from gameWords array
-var randomWord = function (gameWords) {
+function randomWord(gameWords) {
   var randomIndex = Math.floor(Math.random() * gameWords.length);
+  console.log(gameWords[randomIndex]);
   return gameWords[randomIndex];
 }
 
@@ -29,7 +23,7 @@ var isCorrectGuess = function(word, letter) {
  
 
 // Fills ansWordArr with correct number of blanks equal to the randomWord
-var getBlanks = function(word) {
+function getBlanks(word) {
    var ansWord = []
     for (var i = 0; i < word.length; i++) {
         ansWord[i] = "_";
@@ -49,13 +43,14 @@ var fillBlanks = function(word, ansWord, letter) {
 
 //Manages the state of the game - aka the score for the current round and the over all game score
 
-var setupRound = function(ansWord){
+function setupRound(ansWord){
   var roundScore = {
     word:ansWord,
     guessesLeft:9,
     wrongGuesses: [],
     puzzleState: getBlanks(ansWord),
     }
+    console.log(roundScore);
    return roundScore;
   }
 
