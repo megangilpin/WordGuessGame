@@ -1,12 +1,16 @@
 # Word Guess Game (Browser)
 
-<!-- TODO: add one sentence overview here of your progress -->
+<!-- Finished project - passes all test, only issue is it doens't update game after its a win or loss until the next key is press -->
 
 ## Overview
 
-<!-- TODO: add a description of your assignment, theme, approach, and solution here -->
+<!-- Created a word game using Javascript, theme made with bootstrap and CSS-->
 
 ## Functionality Breakdown
-<!-- TODO: update this to your screenshot, gif, etc. demonstrating functionality. add any additional explanation below -->
-[Screenshot of Game](images/screenshot1.png)
+<!-- Random selects a word from an array, that runs through an object and functions that check to see if a word guess is part of that word, then updates the page accordingly. If game is lost or won it runs an alert.
+
+
+
+only issue is it doens't update game after its a win or loss until the next key is press  -->
+
 
