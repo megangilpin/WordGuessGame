@@ -1,6 +1,19 @@
 body{
-  background-image: url("../images/memphis-mini.png");
+   background-image: url("assets/To-Oz-and-Back-1 copy.png");
+   background-repeat: no-repeat;
+   height: 100%;
+   margin: 0;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-  color:#777777;
-  margin: 0px;
+  color: black;
+}
+
+
+
+h2{
+color: black;
+font-family: Apple Chancery, cursive;
+font-size: 70px;
 }
