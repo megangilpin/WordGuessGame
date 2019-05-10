@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Word Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <title>Word Game</title>
 
 </head>
+
 <body>
-<div class="bg"></div>
+  <div class="bg"></div>
 
-<!-- Page Content -->  
-<div class="container">
-  <!-- Header and game info -->
-  <header class="my-4">
-    <div class="row"></div>
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Header and game info -->
+    <header class="my-4">
+      <div class="row"></div>
       <div class="col-md-9">
-        <img class="img-fluid" style="width: 50%" src="assets/the-wizard-of-oz-logo-png.png" alt="Wizard of OZ" >
+        <img class="img-fluid" style="width: 50%" src="assets/the-wizard-of-oz-logo-png.png" alt="Wizard of OZ">
       </div>
-    </div>
+  </div>
 
-    <div class="row">
-      <div class="col-md-12">
-          <h2 class="text-center">Word Game</h2>
-          <p class="text-center" >Somewhere over the rainbow, way up high.<br>
-          There's a Word Game where you guess a word by pressing any letter key. If you get stuck click the ruby slippers to start over.</p>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Word Game</h2>
+      <p class="text-center">Somewhere over the rainbow, way up high.<br>
+        There's a Word Game where you guess a word by pressing any letter key.</p>
     </div>
+  </div>
   </header>
 
-<!-- Puzzle State -->
-        <div class="row my-5">
-            <div class="col-md-12 text-center">
-              <div id="puzzle-state"></div>
-            </div>
-          </div>
+  <!-- Puzzle State -->
+  <div class="row my-5">
+    <div class="col-md-12 text-center">
+      <div class="pz" id="puzzle-state"></div>
+    </div>
+  </div>
 
- <!-- game counters -->
- <div class="row text-center my-5">
+  <!-- game counters -->
+  <div class="row text-center my-5">
 
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="card h-100">
@@ -67,6 +69,7 @@
         <div class="card-body">
           <h4 class="card-title">Wins</h4>
           <div id="win-counter">0</div>
+          
         </div>
       </div>
     </div>
@@ -84,17 +87,10 @@
   </div>
   <!-- /.row -->
 
-  <!-- New game button -->
-  <div class="row">
-      <div class="col-md-12 text-center my-3" id="game-bttn">
-          <button id="playAgain" class="btn btn-primary btn-lg">New Game Who Dis</button>
-      </div>
-    </div>
-
-</div>
-<!-- /.container -->
-<!-- Footer -->
-<footer class="py-4 bg-dark">
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+  <footer class="py-4 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Megan Gilpin 2019</p>
     </div>
@@ -103,43 +99,30 @@
 
   <script type="text/javascript" src="logic.js"></script>
   <script type="text/javascript">
- 
-// variable for where puzzle blanks go
-  var blanks = document.getElementById("puzzle-state");
 
-// Loads game up on screen load
-  blanks.innerHTML = myGame.round.puzzleState.join(" ");
+    // variable for where puzzle blanks go
+    var blanks = document.getElementById("puzzle-state");
+    // Loads game up on screen load
+    blanks.innerHTML = myGame.round.puzzleState.join(" ");
+    
 
-// resets game on button click
-    document.getElementById("playAgain").addEventListener("click", function (event) {
-        blanks.innerHTML = myGame.round.puzzleState.join(" ");
-        document.getElementById("guesses-left").innerText = 9;
-        document.getElementById("wrong-guesses").innerText = [];
-    });
-
-      // Next, on key press fill blanks array with letter gues, update guess-left, wrong-guesses, win-counter, loss-counter, and check if round is over
-
-      document.onkeyup = function(event) {
+    // Next, on key press fill blanks array with letter gues, update guess-left, wrong-guesses, win-counter, loss-counter, and check if round is over
+    document.onkeyup = function (event) {
       var letter = event.key.toLowerCase()
       console.log(myGame);
       updateRound(myGame.round, letter);
       blanks.innerText = fillBlanks(myGame.round.puzzleState, myGame.round.puzzleState, letter).join("  ");
-
       document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
       document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses.join("  ");
-
-      if(isEndOfRound(myGame.round)){
+      if (isEndOfRound(myGame.round)) {
         startNewRound(myGame);
       }
-
       document.getElementById("win-counter").innerText = myGame.wins;
       document.getElementById("loss-counter").innerText = myGame.losses;
     }
 
-    
-
-
   </script>
-    
+
 </body>
+
 </html>

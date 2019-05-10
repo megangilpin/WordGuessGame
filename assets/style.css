@@ -1,5 +1,5 @@
 body{
-   background-image: url("assets/To-Oz-and-Back-1 copy.png");
+   background-image: url("background.png");
    background-repeat: no-repeat;
    height: 100%;
    margin: 0;
@@ -10,10 +10,22 @@ body{
   color: black;
 }
 
-
-
 h2{
-color: black;
+color: rgb(16, 46, 31);
 font-family: Apple Chancery, cursive;
 font-size: 70px;
+}
+
+.pz{
+font-size: 30px;
+}
+
+p{
+  color: rgb(16, 46, 31);
+  font-weight: bold;
+}
+
+.card{
+  background-color:  rgb(40, 131, 86);
+  color:white;
 }

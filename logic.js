@@ -106,13 +106,13 @@ function startNewRound(game){
   var puzzleState = game.round.puzzleState;
     if (hasWon(puzzleState) === true) {
         ++game.wins;
-        alert("Way to go! You just learned that " + game.round.word + " means word!");
+        alert("You guessed it Dorthy! The word was " + game.round.word);
     }
     else {
         ++game.losses;
-        alert("Sorry you'll never know what " + game.round.word + " means");
+        alert("The word was " + game.round.word);
     }
-    game.round = setupRound(randomWord(gameWords))
+  game.round = setupRound(randomWord(gameWords));
 }
 
 var myGame =setupGame(gameWords, 0, 0);
