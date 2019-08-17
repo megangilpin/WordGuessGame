@@ -111,14 +111,14 @@
       var letter = event.key.toLowerCase()
       console.log(myGame);
       updateRound(myGame.round, letter);
-      blanks.innerText = fillBlanks(myGame.round.puzzleState, myGame.round.puzzleState, letter).join("  ");
-      document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
-      document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses.join("  ");
       if (isEndOfRound(myGame.round)) {
         startNewRound(myGame);
       }
       document.getElementById("win-counter").innerText = myGame.wins;
       document.getElementById("loss-counter").innerText = myGame.losses;
+      blanks.innerText = myGame.round.puzzleState.join("  ");
+      document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
+      document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses.join("  ");
     }
 
   </script>
