@@ -1,6 +1,8 @@
 # Word Guess Game :question:
  https://megangilpin.github.io/WordGuessGame/
 
+![Word Guess Game Demo](demo/wordGuesssmall.gif)
+
 ### Overview
 
 Created a word guess game using Javascript, theme made with bootstrap and CSS
