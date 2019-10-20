@@ -6,6 +6,11 @@
 Created a word guess game using Javascript, theme made with bootstrap and CSS
 
 ### Functionality Breakdown
-Randomly selects a word from an array, that runs through an object and functions that check to see if a word guess is part of that word, then updates the page accordingly. If game is lost or won it runs an alert
+Try to guess the word by pressing a letter on your keyboard. Watch out though, you get 9 guesses until you lose that round. 
 
 
+### Technology Used
+- JQuery
+- JavaScript
+- Bootstrap
+- HTML
