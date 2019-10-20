@@ -1,7 +1,7 @@
 # Word Guess Game :question:
  https://megangilpin.github.io/WordGuessGame/
 
-![Word Guess Game Demo](demo/wordGuesssmall.gif)
+![Word Guess Game Demo](demo/wordGuessmed.gif)
 
 ### Overview
 
